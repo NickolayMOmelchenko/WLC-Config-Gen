@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <header>
+      <a href="/">
+        <img class="logo" src="{{ url_for('static', filename='cisco_logo.png') }}" alt="Cisco Logo">
+      </a>
+      <h1>WLC-Gen-Config</h1>
+    </header>
+    <main>
+    <h1>Enter Your Configuration:</h1>
+    <form action="/generate" method="post">
+      <label for="wlc_name">WLC Name:</label>
+      <input type="text" name="wlc_name" placeholder="Enter preferred name of the WLC" required>
+      <span class="tooltip" title="Name the Wireless LAN Controller">
+        <img src="{{ url_for('static', filename='info_icon.png') }}" alt="Info Icon">
+      </span>
+      <br><br>
+      <label for="wlc_type">WLC Type:</label>
+      <select name="wlc_type" id="wlc_type">
+        <option value="wlc-9800">WLC-9800</option>
+        <option value="option2">WLC-xxx</option>
+        <option value="option3">WLC-yyy</option>
+      </select>
+      <span class="tooltip" title="Select the WLC version. Commands may vary per different version">
+        <img src="{{ url_for('static', filename='info_icon.png') }}" alt="Info Icon">
+      </span>
+      <br><br>
+      <label for="AAA_server_name">AAA server name:</label>
+      <input type="text" name="AAA_server_name" placeholder="Enter the AAA server name" required>
+      <span class="tooltip" title="Give Radius server a name">
+        <img src="{{ url_for('static', filename='info_icon.png') }}" alt="Info Icon">
+      </span>
+      <br><br>
+      <!-- <****************> -->
+      <label for="AAA_IPv4_address">AAA IPv4 address:</label>
+      <input type="text" name="AAA_IPv4_address" placeholder="Enter the AAA IPv4 address" required>
+      <span class="tooltip" title="IPv4 will be used for future commands">
+        <img src="{{ url_for('static', filename='info_icon.png') }}" alt="Info Icon">
+      </span>
+      <br><br>
+      <!-- <****************> -->
+      <label for="Shared_Secret">Shared Secret:</label>
+      <input type="text" name="Shared_Secret" placeholder="Enter the Shared Secret" required>
+      <span class="tooltip" title="Shared Secret is used for secure communication with ISE. Should be configured same on both devices.">
+        <img src="{{ url_for('static', filename='info_icon.png') }}" alt="Info Icon">
+      </span>
+      <br><br>
+      <label for="AAA_server_group_name">Create a AAA server group name:</label>
+      <input type="text" name="AAA_server_group_name" placeholder="Enter the AAA server group name" required>
+      <span class="tooltip" title="Creates a group of AAA servers">
+        <img src="{{ url_for('static', filename='info_icon.png') }}" alt="Info Icon">
+      </span>
+      <br><br>
+      <label for="dot1x_list_name">Create a dot1x-list-name:</label>
+      <input type="text" name="dot1x_list_name" placeholder="Enter dot1x-list-name" required>
+      <span class="tooltip" title="List is for dot1x authentication">
+        <img src="{{ url_for('static', filename='info_icon.png') }}" alt="Info Icon">
+      </span>
+      <br><br>
+      <label for="wlan_profile_name">Create a WLAN profile name</ssid-name>:</label>
+      <input type="text" name="wlan_profile_name" placeholder="Enter the profile name" required>
+      <span class="tooltip" title="Internal name for reference. Can't overlap with pre-existing one's">
+        <img src="{{ url_for('static', filename='info_icon.png') }}" alt="Info Icon">
+      </span>
+      <br><br>
+      <label for="wlan_id">Create WLAN ID</ssid-name>:</label>
+      <input type="text" name="wlan_id" placeholder="Enter ID" required>
+      <span class="tooltip" title="Internal ID for reference. Can't overlap with pre-existing one's">
+        <img src="{{ url_for('static', filename='info_icon.png') }}" alt="Info Icon">
+      </span>
+      <br><br>
+      <label for="wlan_ssid">Create WLAN SSID</ssid-name>:</label>
+      <input type="text" name="wlan_ssid" placeholder="Enter ID" required>
+      <span class="tooltip" title="Wifi Name. Can't overlap with pre-existing one's">
+        <img src="{{ url_for('static', filename='info_icon.png') }}" alt="Info Icon">
+      </span>
+      <br><br>
+
+      <label for="policy_profile_name">policy profile name</label>
+      <input type="text" name="policy_profile_name" placeholder="Enter policy profile name" required>
+      <span class="tooltip" title="Policy name">
+        <img src="{{ url_for('static', filename='info_icon.png') }}" alt="Info Icon">
+      </span>
+      <br><br>
+
+      <label for="vlanID_or_VLAN_name">VLAN ID or VLAN name</ssid-name>:</label>
+      <input type="text" name="vlanID_or_VLAN_name" placeholder="Enter ID" required>
+      <span class="tooltip" title="Virtual Local Area Network">
+        <img src="{{ url_for('static', filename='info_icon.png') }}" alt="Info Icon">
+      </span>
+      <br><br>
+
+      <label for="policy_tag_name">Policy tag name</ssid-name>:</label>
+      <input type="text" name="policy_tag_name" placeholder="Enter policy tag name" required>
+      <span class="tooltip" title="Name of the policy tag">
+        <img src="{{ url_for('static', filename='info_icon.png') }}" alt="Info Icon">
+      </span>
+      <br><br>
+
+      <label for="ethernet_mac_addr">AP's MAC Address</ssid-name>:</label>
+      <input type="text" name="ethernet_mac_addr" placeholder="Enter AP's MAC Address" required>
+      <span class="tooltip" title="Enter the Media Access Control address of the Access Point. Located on the back of AP or can be found in WLC(if connected).">
+        <img src="{{ url_for('static', filename='info_icon.png') }}" alt="Info Icon">
+      </span>
+      <br><br>
+
+      <button type="submit">Generate Commands</button>
+    </form>
+  </main>
+  <footer>
+    <p>&copy; 2023 Dynamic Configuration Website. All rights reserved.</p>
+  </footer>
+</body>
+</html>

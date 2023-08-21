@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <header>
+      <a href="/">
+        <img class="logo" src="{{ url_for('static', filename='cisco_logo.png') }}" alt="Cisco Logo">
+      </a>
+      <h1>WLC-Gen-Config</h1>
+    </header>
+    <maincommands>
+    <h1>Generated Commands for {{ wlc_type }}:</h1>
+    <ul>
+      <h3>AAA Configuration:</h3>
+      <li>enable<br>configure terminal<br>host name {{ wlc_name }}<br>
+      aaa new-model<br>radius server {{ AAA_server_name }}</li>
+
+      <li>address ipv4 {{ AAA_IPv4_address }} auth-port 1812 acct-port 1813<br>timeout 300<br>retransmit 3<br>
+      key {{ Shared_Secret }}<br>exit</li>
+
+      <li>aaa group server radius {{ AAA_server_group_name }} <br>
+      server name {{ AAA_server_name }}<br>exit</li>
+
+      <li>aaa server radius dynamic-author<br>
+      client {{ AAA_IPv4_address }} server-key {{ Shared_Secret }} <br>
+      aaa authentication dot1x {{ dot1x_list_name }} group {{ AAA_server_group_name }}<br>
+      radius-server dead-criteria time 5 tries 3<br>radius-server deadtime 5<br>exit</li>
+
+      <h3>WLAN Configuration:</h3>
+      <li>configure terminal<br>wlan {{ wlan_profile_name }} {{ wlan_id }} {{ wlan_ssid }} <br></li>
+      <li>security dot1x authentication-list {{ dot1x_list_name }}<br>no shutdown</li>
+      <li>wireless profile policy {{ policy_profile_name }} <br> aaa-override <br> central switching</li>
+      <li>vlan {{ vlanID_or_VLAN_name }}<br>no shutdown</li>
+      <li>wireless tag policy {{ policy_tag_name }}<br>wlan {{ wlan_profile_name }} policy {{ policy_profile_name }}</li>
+      <li>ap {{ ethernet_mac_addr }}</li>
+      <li>policy-tag {{ policy_tag_name }}<br>end </li>
+
+
+    </ul>
+
+    <form action="/download" method="post">
+      <input type="hidden" name="wlc_name" value="{{ wlc_name }}">
+      <input type="hidden" name="wlc_type" value="{{ wlc_type }}">
+      <input type="hidden" name="AAA_server_name" value="{{ AAA_server_name }}">
+      <input type="hidden" name="AAA_IPv4_address" value="{{ AAA_IPv4_address }}">
+      <input type="hidden" name="Shared_Secret" value="{{ Shared_Secret }}">
+      <input type="hidden" name="AAA_server_group_name" value="{{ AAA_server_group_name }}">
+      <input type="hidden" name="dot1x_list_name" value="{{ dot1x_list_name }}">
+      <input type="hidden" name="wlan_profile_name" value="{{ wlan_profile_name }}">
+      <input type="hidden" name="wlan_id" value="{{ wlan_id }}">
+      <input type="hidden" name="wlan_ssid" value="{{ wlan_ssid }}">
+      <input type="hidden" name="policy_profile_name" value="{{ policy_profile_name }}">
+      <input type="hidden" name="vlanID_or_VLAN_name" value="{{ vlanID_or_VLAN_name }}">
+      <input type="hidden" name="policy_tag_name" value="{{ policy_tag_name }}">
+      <input type="hidden" name="ethernet_mac_addr" value="{{ ethernet_mac_addr }}">
+      <button type="submit">Download Commands</button>
+    </form>
+  </maincommands>
+  <footer>
+    <p>&copy; 2023 Dynamic Configuration Website. All rights reserved.</p>
+  </footer>
+</body>
+</html>

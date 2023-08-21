@@ -1,0 +1,186 @@
+/* Header styles */
+
+/* Styling for the header section */
+header {
+  background-color: #012443;
+  padding: 15px;
+  display: flex; /* Use flexbox to align items horizontally */
+  align-items: center; /* Center items vertically within the header */
+}
+
+/* Adjusting spacing between the logo and h1 */
+.logo {
+  margin-right: -210px; /* Negative margin to create space */
+}
+
+/* Styling for images within the header */
+header img {
+  max-width: 160px; /* Limit the maximum width of images */
+}
+
+/* Styling for the h1 element within the header */
+header h1 {
+  color: #ffffff; /* Set h1 text color to white */
+  flex: 1; /* Allow h1 to take up remaining space and push to the right */
+  text-align: center; /* Center the h1 text within the header */
+  margin: 0; /* Remove default margin to avoid extra space */
+}
+
+/* Body styles */
+
+/* Resetting default margin and padding for the body element */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif; /* Setting font-family for the entire page */
+  background-color: #f2f2f2; /* Set the background color for the body */
+}
+
+/* Main content styles */
+
+/* Styling for the main content container */
+main {
+  max-width: 650px; /* Limit the maximum width of the main content */
+  margin: 20px auto; /* Center the main content container */
+  padding: 20px; /* Add padding inside the main content container */
+  background-color: #ffffff; /* Set background color for the main content */
+  border-radius: 5px; /* Rounded corners for the container */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+  display: flex; /* Use flexbox to arrange items vertically */
+  flex-direction: column; /* Arrange items in a column */
+  justify-content: center; /* Center items vertically within the container */
+}
+
+/* Additional styles for 'maincommands' element */
+maincommands {
+  max-width: 650px; /* Limit the maximum width of 'maincommands' element */
+  margin: 20px auto; /* Center the 'maincommands' element */
+  padding: 20px; /* Add padding inside the 'maincommands' element */
+  background-color: #ffffff; /* Set background color for 'maincommands' element */
+  border-radius: 5px; /* Rounded corners for the container */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+  display: flex; /* Use flexbox to arrange items vertically */
+  flex-direction: column; /* Arrange items in a column */
+  justify-content: center; /* Center items vertically within the container */
+}
+
+/* Styling for h1 elements */
+
+/* Set the color for all h1 elements */
+h1 {
+  color: #012443;
+}
+
+/* Form styles */
+
+/* Add spacing on top of forms */
+form {
+  margin-top: 20px;
+}
+
+/* Label styles */
+
+/* Display labels as block elements and add spacing at the bottom */
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #012443;
+}
+
+/* Input and select styles */
+
+/* Set width, padding, font size, and borders for text input and select elements */
+input[type="text"],
+select {
+  width: 85%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #f2f2f2;
+}
+
+/* Button styles */
+
+/* Styling for submit buttons */
+button[type="submit"] {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #012443;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Hover effect for submit buttons */
+button[type="submit"]:hover {
+  background-color: #024775;
+}
+
+/* List styles */
+
+/* Remove default list styles and margin for ul elements */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Add spacing at the bottom of list items */
+li {
+  margin-bottom: 10px;
+}
+
+/* Tooltip styles */
+
+/* Styling for tooltip containers */
+.tooltip {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Styling for tooltip images */
+.tooltip img {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+/* Tooltip display on hover */
+.tooltip:hover:after {
+  content: attr(title);
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 10px;
+  background-color: #012443;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+/* Smooth transition for tooltip visibility */
+.tooltip:hover:before,
+.tooltip:hover:after {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease;
+}
+
+/* Footer styles */
+
+/* Styling for the footer section */
+footer {
+  background-color: #012443;
+  color: #fff;
+  padding: 10px;
+  text-align: center; /* Center the content within the footer */
+  position: end; /* Position the footer at the bottom */
+  bottom: 0; /* Stick the footer to the bottom of the viewport */
+  left: 0; /* Align the footer to the left */
+  width: 100%; /* Set the width of the footer to 100% of the viewport */
+}
