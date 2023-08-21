@@ -12,10 +12,10 @@ source myenv/bin/activate
 
 2) Install requirements
 
-   pip3 install -r requirements.txt
+pip3 install -r requirements.txt
 
 3) Runn the app
 
-   python3 app.py
+python3 app.py
    
 
