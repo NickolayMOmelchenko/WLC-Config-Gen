@@ -3,15 +3,23 @@
 
 Website that facilitates integration configuration of WLC with Cisco ISE by generation of CLI commands.
 
-Prerequisites
+## Prerequisites
 
 Python 3 installed on your system.
 pip (Python package manager) installed.
 
-## Getting Started
+## Installation
 
-Clone this repository to your local machine.
-1) git clone https://github.com/yourusername/your-python-app.git
-2) Run your Python application using the provided script.
-    chmod +x run.sh
+To get started with this project, follow these steps:
+
+1. Clone the repository to your local machine:
+
+```bash
+git clone https://github.com/yourusername/your-project.git
+cd WLC-Config-Gen 
+
+2. Run your Python application using the provided script.
+```bash
+chmod +x run.sh
+
     ./run.sh
