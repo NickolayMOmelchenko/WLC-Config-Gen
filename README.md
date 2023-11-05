@@ -1,21 +1,17 @@
 # WLC-Config-Gen
 ======================================
 
-Website that facilitates configuration of WLC by generation of CLI commands
-Commands to get started
+Website that facilitates integration configuration of WLC with Cisco ISE by generation of CLI commands.
 
-1) Create and activete venv
+Prerequisites
 
-python3 -m venv myenv
+Python 3 installed on your system.
+pip (Python package manager) installed.
 
-source myenv/bin/activate
+## Getting Started
 
-2) Install requirements
-
-pip3 install -r requirements.txt
-
-3) Runn the app
-
-python3 app.py
-   
-
+Clone this repository to your local machine.
+1) git clone https://github.com/yourusername/your-python-app.git
+2) Run your Python application using the provided script.
+    chmod +x run.sh
+    ./run.sh
